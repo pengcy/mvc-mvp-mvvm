@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MVC MVP MVVM</string>
+    <string name="winner">Winner</string>
+    <string name="action_reset">Reset</string>
 </resources>
