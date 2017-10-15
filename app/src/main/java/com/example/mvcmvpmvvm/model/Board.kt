@@ -1,7 +1,5 @@
 package com.example.mvcmvpmvvm.model
 
-import android.os.Build.VERSION_CODES.O
-
 
 class Board {
 
@@ -37,10 +35,16 @@ class Board {
      *
      * @param row 0..2
      * @param col 0..2
+     * @return the player that moved or null if we did not move anything.
      */
-    fun mark(row: Int, col: Int) {
+    fun mark(row: Int, col: Int): Player? {
+
+        var playerThatMoved: Player? = null
+
         if (isValid(row, col)) {
+
             cells[row][col]!!.value = currentTurn
+            playerThatMoved = currentTurn
 
             if (isWinningMoveByPlayer(currentTurn, row, col)) {
                 state = GameState.FINISHED
@@ -51,6 +55,8 @@ class Board {
                 flipCurrentTurn()
             }
         }
+
+        return playerThatMoved
     }
 
     private fun clearCells() {
