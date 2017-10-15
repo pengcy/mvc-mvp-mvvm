@@ -1,4 +1,4 @@
-package com.example.mvcmvpmvvm
+package com.example.mvcmvpmvvm.model
 
 import com.example.mvcmvpmvvm.model.Player
 import com.example.mvcmvpmvvm.model.Board
